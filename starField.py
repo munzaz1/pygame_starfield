@@ -3,7 +3,6 @@
 
 import pygame
 import random
-import sys
 
 
 class Star():
@@ -17,7 +16,7 @@ class Star():
         self.x = random.randint(-self.width / 4, self.width / 4)
         self.y = random.randint(-self.height / 2, self.height / 2)
         self.z = random.randint(1, self.width)
-        self.r = random.choice([1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 6, 7])
+        self.r = random.choice([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5])
 
 
     def draw(self, screen):
@@ -33,7 +32,7 @@ class Star():
 
 
     def update(self):
-        self.z -= self.width / 200
+        self.z -= self.width / 150
         if (self.z < 1):
             self.setRandomPosition()
 
@@ -46,15 +45,13 @@ def main():
 
     width, height = pygame.display.get_surface().get_size()
 
-
     pygame.display.set_caption('Starfield')
     clock = pygame.time.Clock()
 
     stars = []
-    for i in range(1000):
+    for _ in range(2000):
         s = Star(width, height)
         stars.append(s)
-
 
     finished = False
     while not finished:
@@ -70,11 +67,11 @@ def main():
             if event.type == pygame.QUIT:
                 finished = True
             elif event.type == pygame.KEYDOWN:
-               if event.key == pygame.K_ESCAPE:
-                   finished = True
+                if event.key == pygame.K_ESCAPE:
+                    finished = True
 
     pygame.quit()
 
 
 if __name__=="__main__":
-  main()
+    main()
