@@ -2,5 +2,7 @@
 
 Simple pygame program for starfield flyby
 
-![Preview]
-(https://raw.githubusercontent.com/munzaz1/pygame_starfield/main/starField.png)
+### Requiremets
+Pyrhon 3, Pygame
+
+![Preview](https://raw.githubusercontent.com/munzaz1/pygame_starfield/main/starField.png)
